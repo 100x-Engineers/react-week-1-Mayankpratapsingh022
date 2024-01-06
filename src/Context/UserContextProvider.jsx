@@ -6,11 +6,11 @@ export const UserContext = React.createContext();
 function UserContextProvider({ children }) {
 
   const [user, setuser] = useState({
-    email: " ",
-    name: "  ",
-    birthdate: " ",
-    birthmonth:" ",
-    birthyear:" "
+    email: "",
+    name: "",
+    birthdate: "",
+    birthmonth:"",
+    birthyear:""
   });
 
 

@@ -28,7 +28,7 @@ function Steps({
       <span className={base}>{Editprofile}</span>
       <Link to={buttonlink}>
         {" "}
-        <Button hide={hidebutton} button={buttonstyle} text={buttontext} onClick={onClickFunction} />
+        <Button hide={hidebutton} button={buttonstyle} text={buttontext} handleclick={onClickFunction} />
       </Link>
     </header>
   );

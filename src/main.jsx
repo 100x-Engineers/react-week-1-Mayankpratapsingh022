@@ -18,6 +18,8 @@ import ComposeTweet from './Pages/compose-tweet/ComposeTweet'
 import UserProfile from './Pages/UserProfile/UserProfile'
 import EditProfile from './Pages/UserProfile/EditProfile.jsx'
 import { TweetProvider } from './Context/TweetContext.jsx'
+import SignInEmail from './Pages/SignUp/SignInEmail.jsx'
+import SignInPassword from './Pages/SignUp/SignInPassword.jsx'
 
 
 const router = createBrowserRouter([
@@ -61,6 +63,15 @@ const router = createBrowserRouter([
   {
     path: "/EditProfile",
     element: <EditProfile/>
+  },
+  {
+    path: "/SignInEmail",
+    element: <SignInEmail/>
+  },
+  
+  {
+    path: "/SignInPassword",
+    element: <SignInPassword/>
   },
   
   

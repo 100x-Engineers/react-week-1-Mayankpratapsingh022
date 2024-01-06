@@ -1,26 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomePageHeader from '../../Componets/HomePageHeader'
 import HomePageFooter from '../../Componets/HomePageFooter'
 import PlusButton from '../../Componets/PlusButton'
 import Tweet from '../../Componets/Tweet'
 import { Link } from 'react-router-dom'
 import { useTweetContext } from "../../Context/TweetContext";
+// import { UserFeed } from '../../services/feedService'
 
 function HomeFeedIndex() {
   
   const { tweet } = useTweetContext();
   console.log(tweet);
 
+
+
+  const UserFeed =  async () =>  {
+
+    const response = await fetch("http://localhost:3000/feed");
+    const data = response.json();
+    console.log(data)
+    return data;
+      
+    
+   
+   }
+
+   useEffect(()=> {
+    UserFeed();
+   },[]);
   return (
    <>
 <div className="bg-Neutral/1000">
 
    <HomePageHeader/>
-  {/* content feed */}
-  <main className=" overflow-scroll">
+ 
+  <main className=" overflow-scroll bg-black h-screen ">
    
+   {
 
-   <Tweet name ="Name" username ="@Johndoe" timestamp="00" TweetText="this is a tweet" />
+    tweet.map( (index)=> (
+
+      <Tweet name ="Name" username ="@Johndoe" timestamp="00" TweetText={index.text} />
+
+    ) )
+   }
+  
 
   </main>
 

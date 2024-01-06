@@ -10,23 +10,36 @@ import { UserContext } from "../../Context/UserContextProvider";
 
 function CreateAccountStepI() {
   const { user, setuser } = useContext(UserContext);
+  const BASE_URL = "http://localhost:3000" 
+// fetch(`/login`,{
+// method:"POST",
+// headers:{
+//   "Content-Type":"application/json",
 
-  function handelsetemail(value) {
-    setuser({
-      ...user,
-      email: value,
-    });
-  }
+// },
+// body:JSON.stringify({
+//   email:"he@example.com",
+//   password:"1234"
+// })
 
-  function handelsetname(value) {
-    setuser({
-      ...user,
-      name: value,
-    });
-  }
-
+// }).then((response)=>response.json()).then((json)=>console.log(json));
 
 
+
+
+function handelsetemail(value) {
+  setuser({
+    ...user,
+    email: value,
+  });
+}
+
+function handelsetname(value) {
+  setuser({
+    ...user,
+    name: value,
+  });
+}
 
 
 
@@ -66,7 +79,7 @@ function CreateAccountStepI() {
 
       <Link to="/step-2">
         {" "}
-        <LoginButton />
+               <LoginButton />
       </Link>
     </div>
   );

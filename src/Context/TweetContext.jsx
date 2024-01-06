@@ -17,7 +17,7 @@ export function TweetProvider({ children }) {
 
 
  
-  // const addTweet = (newTweet) => {
+  //f const addTweet = (newTweet) => {
   //   newTweet = { ...newTweet, likeCount: 0, reTweeet: 0 };
 
   //   setTweet((previousTweeet) => [newTweet, ...previousTweeet]);

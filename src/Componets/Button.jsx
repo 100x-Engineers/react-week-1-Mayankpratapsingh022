@@ -4,6 +4,7 @@ function Button({
   text = "button",
   button = "button-white",
   hide = "display",
+  handleclick
 }) {
   const buttons = {
     "button-white": "bg-neutral-50 text-neutral-1000 w-full ",
@@ -17,7 +18,7 @@ function Button({
 
   return (
     <>
-      <button className={base}>{text}</button>
+      <button onClick={handleclick}  className={base}>{text}</button>
     </>
   );
 }

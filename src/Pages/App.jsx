@@ -40,7 +40,7 @@ const navigate = useNavigate();
         <p className="text-0.9375rem font-medium leading-normal not-italic font-inter text-neutral-50">
           Already have an account?
         </p>
-       <div onClick= {()=> navigate("/step-1")} ><Button button="button-outline" text="Sign up"   /></div> 
+       <div onClick= {()=> navigate("/SignInEmail")} ><Button button="button-outline" text="Sign up"   /></div> 
 
 
       </section>

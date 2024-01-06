@@ -19,7 +19,7 @@ let inputclass = `w-full caret-#1D9BF0  bg-transparent outline-none text-neutral
 
 let bordercolor = {
   "blue":"border-twitter-blue",
-  "red":"border-rose-500"
+  "red":"border-Error",
 
 
 }

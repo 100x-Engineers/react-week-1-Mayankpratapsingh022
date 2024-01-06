@@ -6,13 +6,26 @@ import Button from "../../Componets/Button";
 import LoginButton from "../../Componets/LoginButton";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContextProvider";
+
 function CreateAccountStepII() {
 
   const { user} = useContext(UserContext);
 
 let birthinfo = `${user.birthdate} ${user.birthmonth} ${user.birthyear} `
 
+const SendMail = async()=>{
 
+  await  fetch(`http://localhost:3000/SendMail`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+        email:user.email,
+      
+    })
+ }) 
+
+
+}
 
   const PlaceholderValues = {
     [user.name]: "Name",
@@ -34,8 +47,8 @@ let birthinfo = `${user.birthdate} ${user.birthmonth} ${user.birthyear} `
 
 
       </main>
-   
-      <Link to="/step-3">    <LoginButton button ="button-blue" text="Sign up"/></Link>
+   {/* <button>hello</button> */}
+     <button onClick={SendMail} > <Link to="/step-3">  <LoginButton button ="button-blue"   text="Sign up"/> </Link></button> 
     </div>
   );
 }
