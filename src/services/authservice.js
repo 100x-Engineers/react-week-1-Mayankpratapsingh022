@@ -13,12 +13,15 @@ export const userLogin =  async (email,password) =>  {
             })
          })
 
-        //  const jsonResponse = await response.json();
-        //  console.log("jsonn",jsonResponse);
-        // const statusCode = response.status;
+         // const jsonResponse = await result.json();
+         // console.log("jsonn",jsonResponse);
+     
       
+ 
         return result;
-         
+
+
+   
    
   }catch(error){
      console.log(error);

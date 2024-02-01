@@ -9,6 +9,8 @@ import Button from '../../Componets/Button'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../Context/UserContextProvider'
 import { userLogin } from '../../services/authservice'
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 function SignInPassword() {
     const { user, setuser } = useContext(UserContext);
     const [password,setpassword] = useState("");
@@ -18,8 +20,23 @@ function SignInPassword() {
 
        try{
       const response = await userLogin(user.email,password);
-      console.log(response.status, "hello")
+
+      // console.log(response.json().then((result)=>{
+      //   return result.token;
+      // }), "hello");
+
+
+
+      const data = await response.json();
+
+      // // Access the token from the response
+      const {token} = data;
+  
+
+      cookies.set("user_id",token,{sameSite:"strict"});
       if(response.status == "200"){
+        
+        // await fetch(`http://localhost:3000/cookie`);
         navigate("/home");
       }
     else{

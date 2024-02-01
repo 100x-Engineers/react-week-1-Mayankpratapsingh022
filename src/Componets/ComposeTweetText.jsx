@@ -3,18 +3,12 @@ import Profile from "../assets/profile.png";
 import { useTweetContext } from "../Context/TweetContext";
 import { useNavigate } from "react-router-dom";
 import Steps from "./Steps";
+import Cookies from 'universal-cookie';
 
-function ComposeTweetText({tweetData,setTweetData,buttonFunction}) {
+function ComposeTweetText({tweetData,setTweetData}) {
 
-
-  // const composeTweetData = tweetData.length > 280 ? (
-  //   <div>
-  //     {tweetData.slice(0, 280)}
-  //     <span className="bg-Error">{tweetData.slice(280,tweetData.length)}</span>
-  //   </div>
-  // ) : tweetData;
-
-
+  const cookies = new Cookies();
+ 
 
   const navigate = useNavigate();
 
@@ -28,10 +22,65 @@ function ComposeTweetText({tweetData,setTweetData,buttonFunction}) {
       const newTweets = { text: tweetData };
       
       addTweet(newTweets);
-    
-   
 
-      navigate("/home");
+      if(newTweets.text.length>280){
+        console.log("The tweet should't exceed the limit of 280 chars")
+      }else{
+         
+
+        const SendTweet =  async ()=>{
+
+         const response =  await  fetch(`http://localhost:3000/addTweet`,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                tweet:newTweets.text,
+                user_id:cookies.get('user_id'),
+              
+            })
+         }) 
+        
+        //  return response;
+
+         try{
+          if(response.ok){
+            console.log("go to home")
+            navigate("/home");
+             
+            }else{
+             console.log("There is some error, Can't create The 100x tweet");
+            }
+          }catch(error){
+            console.log(error);
+          }
+    
+      
+    
+
+}
+  
+SendTweet();
+
+
+// try{
+//       if(SendTweet.ok){
+//         console.log("go to home")
+//         navigate("/home");
+         
+//         }else{
+//          console.log("There is some error, Can't create The 100x tweet");
+//         }
+//       }catch(error){
+//         console.log(error);
+//       }
+
+  
+
+
+   
+      }
+
+   
     }
   };
 

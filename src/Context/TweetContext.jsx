@@ -16,12 +16,6 @@ export function TweetProvider({ children }) {
   };
 
 
- 
-  //f const addTweet = (newTweet) => {
-  //   newTweet = { ...newTweet, likeCount: 0, reTweeet: 0 };
-
-  //   setTweet((previousTweeet) => [newTweet, ...previousTweeet]);
-  // };
 
   const tweetContextValue = {
     addTweet,

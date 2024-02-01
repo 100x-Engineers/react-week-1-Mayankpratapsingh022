@@ -1,16 +1,5 @@
-const BASE_URL = "http://localhost:3000"
 
 
-export const UserFeed =  async () =>  {
-
- const response = await fetch("http://localhost:3000/feed");
- const data = response.json();
- console.log(data)
- return data;
-   
- 
-
-}
 
 
 

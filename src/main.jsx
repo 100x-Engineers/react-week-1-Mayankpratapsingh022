@@ -57,11 +57,11 @@ const router = createBrowserRouter([
     element: <ComposeTweet/>
   },
   {
-    path: "/UserProfile",
+    path: "/UserProfile/:id",
     element: <UserProfile/>
   },
   {
-    path: "/EditProfile",
+    path: "/EditProfile/:id",
     element: <EditProfile/>
   },
   {
