@@ -13,7 +13,7 @@ function UserProfile() {
   const userId = useParams().id;
   const GetUserInfo = async () => {
   
-    const response =  await  fetch(`http://localhost:3000/CurrentUserFeed/${userId}`);
+    const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/CurrentUserFeed/${userId}`);
   
    const data = await response.json().then((result) => {
     setPosts(result.posts);

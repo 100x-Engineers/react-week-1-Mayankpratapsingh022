@@ -21,7 +21,7 @@ function Tweet({name ="Name",username="@Johndoe",createdAt="00",TweetText="this 
   let [TotalLikes,setTotalLikes]=useState(0);
   let [userIdres,setUserIDres]= useState();
    const getid = async ()=>{
-    const responseId =  await axios.post('http://localhost:3000/id', {
+    const responseId =  await axios.post(`${import.meta.env.VITE_FETCH_URL}/id`, {
       user_id:UserIdToken,
       userId:userIdres,
       postId:PostId,
@@ -36,7 +36,7 @@ function Tweet({name ="Name",username="@Johndoe",createdAt="00",TweetText="this 
   const likeStatusFunction = async ()=>{
 
 
-    const response =  await  fetch(`http://localhost:3000/likeStatus`,{
+    const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/likeStatus`,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
@@ -57,7 +57,7 @@ function Tweet({name ="Name",username="@Johndoe",createdAt="00",TweetText="this 
    setLikeStatus(data.likestatus);
    console.log(data.likestatus,"hellooo");
 // console.log(likeStatus)
-  // const likeStatusresponse = await  axios.post('http://localhost:3000/likeStatus',{
+  // const likeStatusresponse = await  axios.post(`${import.meta.env.VITE_FETCH_URL}/likeStatus`,{
   //   user_id:UserIdToken,
   //   userId:userIdres,
   //   postId:PostId,
@@ -109,7 +109,7 @@ function Tweet({name ="Name",username="@Johndoe",createdAt="00",TweetText="this 
 
 
 const likenumber = async()=>{
-   const result = await axios.post(`http://localhost:3000/likeNumber/${PostId}`)
+   const result = await axios.post(`${import.meta.env.VITE_FETCH_URL}/likeNumber/${PostId}`)
    
    setTotalLikes(result.data.TotolLike);
    console.log(TotalLikes)
@@ -123,7 +123,7 @@ const likeTweetFunction = async () =>{
  
  
 
-  const response =  await  fetch(`http://localhost:3000/like`,{
+  const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/like`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({

@@ -15,7 +15,7 @@ function UserProfileinfo({UserDisplayName ="John Doe",UserName="",Bio="",Website
   const GetUserId = async () => {
 
     
-    const response =  await  fetch(`http://localhost:3000/id`,{
+    const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/id`,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
@@ -39,7 +39,7 @@ function UserProfileinfo({UserDisplayName ="John Doe",UserName="",Bio="",Website
 
   const isfollowing = async () =>{
   
-    const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/isfollowing`,{
+    const response =  await  fetch(`${import.meta.env.VITE_VITE_FETCH_URL}/isfollowing`,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
@@ -58,7 +58,7 @@ function UserProfileinfo({UserDisplayName ="John Doe",UserName="",Bio="",Website
    }
  const Follow = async () =>{
   
-  const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/follow`,{
+  const response =  await  fetch(`${import.meta.env.VITE_VITE_FETCH_URL}/follow`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({

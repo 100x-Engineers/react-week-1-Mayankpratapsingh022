@@ -27,7 +27,7 @@ const [file,setfile] = useState()
 
   const GetUserInfo = async () => {
   
-    const response =  await  fetch(`http://localhost:3000/CurrentUserProfile/${userId}`);
+    const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/CurrentUserProfile/${userId}`);
   
    const data = await response.json().then((result) => {
 
@@ -67,7 +67,7 @@ console.log("user data changed")
   //     const formData = new FormData();
   //     formData.append('file', selectedFile);
 
-  //     fetch('http://localhost:3000/upload', {
+  //     fetch(`${import.meta.env.VITE_FETCH_URL}/upload`, {
   //       method: 'POST',
   //       body: {
   //         formData,
@@ -95,7 +95,7 @@ console.log("user data changed")
 // e.preventDefault();
 // const formData = new FormData();
 // formData.append("image",image);
-// const result = await axios.post(`http://localhost:3000/upload`,formData,{
+// const result = await axios.post(`${import.meta.env.VITE_FETCH_URL}/upload`,formData,{
 //   headers:{"Content-Type":"multipart/form-data"},
 // }
 
@@ -111,7 +111,7 @@ console.log("user data changed")
 //   formData.append("image", image); // Replace 'image' with the actual variable containing the image file
 
 //   try {
-//     const response = await fetch('http://localhost:3000/upload', {
+//     const response = await fetch(`${import.meta.env.VITE_FETCH_URL}/upload`, {
 //       method: 'POST',
 //       body: formData,
 //       headers: {
@@ -143,7 +143,7 @@ const upload = ()=> {
   const formData = new FormData()
   formData.append('userId', userId);
   formData.append('file',file)
-    axios.post('http://localhost:3000/upload',formData).then(
+    axios.post(`${import.meta.env.VITE_FETCH_URL}/upload`,formData).then(
       response => {
  
         console.log('Response:', response.data);
@@ -162,7 +162,7 @@ const upload = ()=> {
 
 
 const updateUserInfo =  async ()=>{
-  const response =  await  fetch(`http://localhost:3000/EditUserProfile`,{
+  const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/EditUserProfile`,{
     method:"PUT",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({
@@ -210,7 +210,7 @@ upload();
 </section>
 
 <section className="px-5 w-full relative bg-black  ">
-  {/* <form action='http://localhost:3000/upload' method='POST' encType='multipart/form-data' > */}
+  {/* <form action=`${import.meta.env.VITE_FETCH_URL}/upload` method='POST' encType='multipart/form-data' > */}
 
 <button  onClick={openFileInput}   className=' cursor-pointer' ><img src={userInfo.profilePicUrl?userInfo.profilePicUrl:Profile} className="w-4.25rem h-4.25rem shrink-0 rounded-full object-cover border-4 border-black absolute -top-12 translate-x-3 translate-y-0 bottom-5  " /></button>
 

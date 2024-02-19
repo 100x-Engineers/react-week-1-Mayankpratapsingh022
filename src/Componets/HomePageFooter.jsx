@@ -11,7 +11,7 @@ function HomePageFooter() {
   const navigate = useNavigate();
 const GetUserId = async () => {
   
-  const response =  await  fetch(`http://localhost:3000/id`,{
+  const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/id`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({

@@ -15,7 +15,7 @@ let birthinfo = `${user.birthdate} ${user.birthmonth} ${user.birthyear} `
 
 const SendMail = async()=>{
 
-  await  fetch(`http://localhost:3000/SendMail`,{
+  await  fetch(`${import.meta.env.VITE_FETCH_URL}/SendMail`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({

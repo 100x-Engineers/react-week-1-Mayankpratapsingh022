@@ -36,7 +36,7 @@ function SignInPassword() {
       cookies.set("user_id",token,{sameSite:"strict"});
       if(response.status == "200"){
         
-        // await fetch(`http://localhost:3000/cookie`);
+        // await fetch(`${import.meta.env.VITE_FETCH_URL}/cookie`);
         navigate("/home");
       }
     else{
@@ -53,7 +53,7 @@ function SignInPassword() {
 //     try{
 
    
-//       const result =   await  fetch("http://localhost:3000/login",{
+//       const result =   await  fetch(`${import.meta.env.VITE_FETCH_URL}/login`,{
 //             method:"POST",
 //             headers:{"Content-Type":"application/json"},
 //             body:JSON.stringify({

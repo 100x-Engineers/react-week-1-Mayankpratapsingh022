@@ -9,8 +9,9 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/UserContextProvider";
 
 function CreateAccountStepI() {
+ 
   const { user, setuser } = useContext(UserContext);
-  const BASE_URL = "http://localhost:3000" 
+  const BASE_URL = import.meta.env.VITE_FETCH_URL
 // fetch(`/login`,{
 // method:"POST",
 // headers:{

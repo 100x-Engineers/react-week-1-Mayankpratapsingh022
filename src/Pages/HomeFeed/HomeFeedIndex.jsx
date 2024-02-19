@@ -18,7 +18,7 @@ function HomeFeedIndex() {
 
   const UserFeed =  async () =>  {
 
-    const response = await fetch("http://localhost:3000/feed",{
+    const response = await fetch(`${import.meta.env.VITE_FETCH_URL}/feed`,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({

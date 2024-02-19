@@ -30,7 +30,7 @@ function ComposeTweetText({tweetData,setTweetData}) {
 
         const SendTweet =  async ()=>{
 
-         const response =  await  fetch(`http://localhost:3000/addTweet`,{
+         const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/addTweet`,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({

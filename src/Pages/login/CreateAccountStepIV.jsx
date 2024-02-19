@@ -13,7 +13,7 @@ function CreateAccountStepIV() {
   let birthinfo = `${user.birthyear}-${user.birthmonth}-${user.birthdate}`
  console.log(birthinfo)
   const signinfetch =  async () =>  {
-    await  fetch("http://localhost:3000/signup",{
+    await  fetch(`${import.meta.env.VITE_FETCH_URL}/signup`,{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({

@@ -1,10 +1,11 @@
-const BASE_URL = "http://localhost:3000"
 
 export const userLogin =  async (email,password) =>  {
+   
+
     try{
 
    
- const result =   await  fetch(`${BASE_URL}/login`,{
+ const result =   await  fetch(`https://one00x-backend-mayank.onrender.com/login`,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({

@@ -17,7 +17,7 @@ function UserProfileHeader({paramId}) {
 
   const GetUserInfo = async () => {
   
-    const response =  await  fetch(`http://localhost:3000/CurrentUserProfile/${userId}`);
+    const response =  await  fetch(`${import.meta.env.VITE_FETCH_URL}/CurrentUserProfile/${userId}`);
   
    const data = await response.json().then((result) => {
 

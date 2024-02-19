@@ -20,7 +20,7 @@ function CreateAccountStepIII({}) {
 
   const verfiyMail =  async ()=>{
 
-  const response = await  fetch(`http://localhost:3000/verifyMail`,{
+  const response = await  fetch(`${import.meta.env.VITE_FETCH_URL}/verifyMail`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({
