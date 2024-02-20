@@ -5,7 +5,7 @@ export const userLogin =  async (email,password) =>  {
     try{
 
    
- const result =   await  fetch(`https://one00x-backend-mayank.onrender.com/login`,{
+ const result =   await  fetch(`${import.meta.env.VITE_FETCH_URL}/login`,{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
