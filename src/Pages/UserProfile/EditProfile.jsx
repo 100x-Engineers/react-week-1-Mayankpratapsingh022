@@ -55,82 +55,28 @@ const [file,setfile] = useState()
 GetUserInfo();
 console.log("user data changed")
   },[])
-  // const [selectedFile, setSelectedFile] = useState(null);
-
-  // const handleFileChange = (e) => {
-  //   // Update the state with the selected file
-  //   setSelectedFile(e.target.files[0]);
-  // };
-
-  // const handleUpload = () => {
-  //   if (selectedFile) {
-  //     const formData = new FormData();
-  //     formData.append('file', selectedFile);
-
-  //     fetch(`${import.meta.env.VITE_FETCH_URL}/upload`, {
-  //       method: 'POST',
-  //       body: {
-  //         formData,
-  //         userId:userId,
-
-  //       },
-  //     })
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         // Handle the response from the server
-  //         console.log('File uploaded successfully:', data);
-  //       })
-  //       .catch(error => {
-  //         // Handle errors
-  //         console.error('Error uploading file:', error);
-  //       });
-  //   } else {
-  //     console.error('No file selected.');
-  //   }
 
 
-  // };
 
-// const submitImage= async(e) =>{
-// e.preventDefault();
-// const formData = new FormData();
-// formData.append("image",image);
-// const result = await axios.post(`${import.meta.env.VITE_FETCH_URL}/upload`,formData,{
-//   headers:{"Content-Type":"multipart/form-data"},
+  //coudinary fronted code
+// const [picture,setPicture] = useState("")
+
+
+// const submitPicture = ()=>{
+//   const data = new FormData()
+//    data.append("file",picture)
+//    data.append("upload_preset","100xapp")
+//    data.append("cloud_name","dtkgb69tp")
+//    fetch("https://api.cloudinary.com/v1_1/100xapp/image/upload",{
+//     method:"post",
+//     body:data
+//   }).then((res)=>res.json()).then((data)=>{
+//     console.log(data);
+//   }).catch((err)=>{
+//     console.log(err)
+//   })
 // }
 
-// )
-// }
-
-
-
-// const submitImage = async (e) => {
-//   e.preventDefault();
-
-//   const formData = new FormData();
-//   formData.append("image", image); // Replace 'image' with the actual variable containing the image file
-
-//   try {
-//     const response = await fetch(`${import.meta.env.VITE_FETCH_URL}/upload`, {
-//       method: 'POST',
-//       body: formData,
-//       headers: {
-//         'Content-Type': 'multipart/form-data',
-//       },
-//     });
-
-//     if (!response.ok) {
-//       throw new Error('Image upload failed');
-//     }
-
-//     const result = await response.json(); // Assuming the server returns JSON, adjust accordingly
-
-//     console.log(result); // You can handle the result as needed
-//   } catch (error) {
-//     console.error('Error uploading image:', error);
-//     // Handle error as needed
-//   }
-// };
 
 const openFileInput = () => {
   // Trigger click event on the file input
@@ -155,7 +101,7 @@ const upload = ()=> {
 
 
 // const onInputChange = (e)=>{
-// setImage(e.target.files[0]);
+// setImage(e.target.files[0]);  
 // console.log(e.target.files[0]);
 
 // }
@@ -220,7 +166,8 @@ upload();
 
 
 {/* </form> */}
-
+{/* <input type='file' onChange={(e)=>setPicture(e.target.files[0])}/>
+<button className='bg-white text-balckw' onClick={submitPicture}>upload</button> */}
 
    <div className='overflow-y-auto '>
    <div className='py-10'>

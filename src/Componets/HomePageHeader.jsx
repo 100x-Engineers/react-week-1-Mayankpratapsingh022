@@ -2,7 +2,7 @@ import React from 'react'
 import ForyouAndFollowing from './ForyouAndFollowing'
 import Logo from '../assets/100x.svg'
 import Profile from '../assets/profile.png'
-import Logout from '../assets/Logout.svg'
+import Logout from '../assets/logout.svg'
 import Cookies from 'universal-cookie';
 
 function HomePageHeader() {
